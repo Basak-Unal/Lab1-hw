@@ -1,15 +1,14 @@
-
 /**
  * This s the file in which the interactions with the users are managed and executed
  * @author Erez Koc
  */
 
-import java.util.Scanner;
-import java.lang.Math;
-
-public class Menu 
-{
-
+ import java.util.Scanner;
+ import java.lang.Math;
+ 
+ public class Menu 
+ {
+ 
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in); 
@@ -27,17 +26,18 @@ public class Menu
 
         while (request != 5)
         {
-            System.out.print("Enter the operation that you would like to proceed with: \n1.Find the average\n2.Find the odd sum\n3.Find smallest\n4.Find largest");
+            System.out.print("Enter the operation that you would like to proceed with: \n1.Find the odd and even sums\n2.Find the average and list the difference\n3.Find smallest\n4.Find largest\n");
             request = in.nextInt();
 
            // The following switch case manages the inputs of the user according to the task descriptions.
             switch (request) {
                 case 1:
-                     System.out.println("1");
+                    System.out.println("Even indexes: " + sumOfEvenIndexes(target));
+                    System.out.println("Odd indexes: " + sumOfOddIndexes(target));
                     break;
             
                 case 2:
-                    System.out.println("2");
+                    printArray(differencesFromAverage(target));
                     break;
                 case 3:
                     System.out.println(showSmallest(target));
@@ -116,4 +116,19 @@ public class Menu
         }
         System.out.println();
     }
-}
+    public static int sumOfEvenIndexes(int[] array){
+        int sum = 0;
+        for (int i = 0; i < array.length; i = i+2){
+            sum += array[i];
+        }
+        return sum;
+    }
+    public static int sumOfOddIndexes(int[] array){
+        int sum = 0;
+        for (int i = 1; i < array.length; i = i+2){
+            sum += array[i];
+        }
+        return sum;
+    }
+ }
+ 
