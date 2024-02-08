@@ -1,0 +1,13 @@
+public static int[] differencesFromAverage(int[] array){
+        int sum = 0;
+        int average;
+        int[] differences = new int[array.length];
+        for (int i = 0; i < array.length; i++){
+            sum += array[i];
+        }
+        average = sum / array.length;
+        for (int i = 0; i < array.length; i++){
+            differences[i] = array[i] - average;
+        }
+        return differences;
+    }
