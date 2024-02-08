@@ -27,15 +27,14 @@ public class Menu
 
         while (request != 4)
         {
-            System.out.print("Enter the operation that you would like to proceed with: \n1.Find the average\n2.Find the odd sum\n3.Find\n");
+            System.out.println("Enter the operation that you would like to proceed with: \n1.Find the average\n2.Find the odd sum\n3.Find the even sum\n");
             request = in.nextInt();
 
            // The following switch case manages the inputs of the user according to the task descriptions.
             switch (request) {
                 case 1:
-                     System.out.println("1");
+                    System.out.println("1");
                     break;
-            
                 case 2:
                     System.out.println("2");
                     break;
