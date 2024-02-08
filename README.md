@@ -1,4 +1,4 @@
-# Lab1-hw
+
 /**
  * This s the file in which the interactions with the users are managed and executed
  * @author Erez Koc
@@ -25,23 +25,27 @@ public class Menu
 
         int request = 0;
 
-        while (request != 4)
+        while (request != 5)
         {
-            System.out.println("Enter the operation that you would like to proceed with: \n1.Find the average\n2.Find the odd sum\n3.Find the even sum\n");
+            System.out.print("Enter the operation that you would like to proceed with: \n1.Find the average\n2.Find the odd sum\n3.Find smallest\n4.Find largest");
             request = in.nextInt();
 
            // The following switch case manages the inputs of the user according to the task descriptions.
             switch (request) {
                 case 1:
-                    System.out.println("1");
+                     System.out.println("1");
                     break;
+            
                 case 2:
                     System.out.println("2");
                     break;
                 case 3:
-                    System.out.println("3");
+                    System.out.println(showSmallest(target));
                     break;  
                 case 4:
+                    System.out.println(showLargest(target));
+                    break;
+                case 5:
                     System.out.println("Exiting..."); 
                     break;
                 default:
@@ -50,5 +54,45 @@ public class Menu
             } 
         }
 
+    }
+
+    public static int showLargest(int[] array)
+    {
+        int largest = Integer.MIN_VALUE;
+        for(int i: array)
+        {
+            if(i > largest)
+            {
+                largest = i;
+            }
+        }
+        return largest;
+    }
+
+    public static int showSmallest(int[] array)
+    {
+        int smallest = Integer.MAX_VALUE;
+        for(int i: array)
+        {
+            if(i < smallest)
+            {
+                smallest = i;
+            }
+        }
+        return smallest;
+    }
+    
+    public static int[] differencesFromAverage(int[] array){
+        int sum = 0;
+        int average;
+        int[] differences = new int[array.length];
+        for (int i = 0; i < array.length; i++){
+            sum += array[i];
+        }
+        average = sum / array.length;
+        for (int i = 0; i < array.length; i++){
+            differences[i] = array[i] - average;
+        }
+        return differences;
     }
 }
