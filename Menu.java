@@ -1,5 +1,5 @@
 /**
- * This s the file in which the interactions with the users are managed and executed
+ * This is the file in which the interactions with the users are managed and executed.
  * @author Erez Koc
  * @author Basak Unal
  * @author Simay Bal
